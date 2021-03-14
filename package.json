@@ -5,9 +5,11 @@
   "main": "index.js",
   "scripts": {
     "start": "node --inspect=5858 -r ts-node/register ./src/index.ts",
-    "start:watch": "nodemon",
+    "start:watch": "nodemon --inspect=5858 -r ts-node/register ./src/index.ts",
     "build": "tsc",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "setup:force": "node ./scripts/setup.js --force",
+    "generate-migration": "node ./scripts/generate-migration.js"
   },
   "nodemonConfig": {
     "ignore": [
@@ -25,12 +27,16 @@
   "author": "jeehyae dance",
   "license": "ISC",
   "dependencies": {
+    "db-migrate": "^0.11.12",
+    "db-migrate-pg": "^1.2.2",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "express-session": "^1.17.1",
     "nodemon": "^2.0.7",
     "passport": "^0.4.1",
-    "pg": "^8.5.1"
+    "passport-local": "^1.0.0",
+    "pg": "^8.5.1",
+    "pgtools": "^0.3.1"
   },
   "devDependencies": {
     "@types/dotenv": "^8.2.0",
@@ -38,6 +44,7 @@
     "@types/express-session": "^1.17.3",
     "@types/node": "^14.14.32",
     "@types/passport": "^1.0.6",
+    "@types/passport-local": "^1.0.33",
     "@types/pg": "^7.14.9",
     "ts-node": "^9.1.1",
     "typescript": "^4.1.5"
