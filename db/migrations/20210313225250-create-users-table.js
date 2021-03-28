@@ -35,6 +35,14 @@ exports.up = function(db, callback) {
     hashed_password: { 
       type: "string", 
       notNull: true 
+    },
+    created_at: {
+      type: "datetime",
+      notNull: true
+    },
+    updated_at: {
+      type: "datetime",
+      notNull: true
     }
   }, callback)
 };

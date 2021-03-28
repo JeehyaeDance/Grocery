@@ -43,7 +43,8 @@ exports.up = function(db, callback) {
         },
         mapping: "id"
       }
-    }
+    },
+    
   }, callback)
 };
 
